@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SolutionSold</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 25px;
+        }
+        .last-updated {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy</h1>
+    <p class="last-updated">Last Updated: [04/09/2025]</p>
+    
+    <h2>1. Introduction</h2>
+    <p>SolutionSold ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services, including appointment reminders and marketing messages sent via A2P 10DLC compliant messaging.</p>
+    
+    <h2>2. Information We Collect</h2>
+    <p>We may collect personal information that you voluntarily provide to us, including:</p>
+    <ul>
+        <li>Contact information (Esteban Holman, info@solutionsold.com, 602-902-1249)</li>
+        <li>Appointment details and preferences</li>
+        <li>Communication preferences</li>
+        <li>Other information relevant to customer surveys/offers</li>
+    </ul>
+    
+    <h2>3. How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+        <li>Send appointment reminders via SMS/text messages</li>
+        <li>Provide marketing communications (if consented)</li>
+        <li>Improve our products and services</li>
+        <li>Respond to customer service requests</li>
+        <li>Comply with legal obligations</li>
+    </ul>
+    
+    <h2>4. Message Frequency</h2>
+    <p>For appointment reminders and marketing messages, message frequency varies based on your interactions with our services. Typically, you may receive 1-4 messages per month for marketing purposes, plus necessary appointment-related communications.</p>
+    
+    <h2>5. Consent for SMS Communications</h2>
+    <p>By providing your phone number and opting in to our SMS services, you expressly consent to receive automated marketing and appointment reminder text messages from us. Message and data rates may apply.</p>
+    
+    <h2>6. Opting Out</h2>
+    <p>You can opt out of receiving SMS messages at any time by replying STOP to any message you receive. For help, reply HELP. After opting out, you may receive one final confirmation message.</p>
+    
+    <h2>7. Data Security</h2>
+    <p>We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
+    
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy periodically. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+    
+    <h2>9. Contact Us</h2>
+    <p>If you have questions about this Privacy Policy, please contact us at:</p>
+    <p>Email: [info@solutionsold.com]<br>
+    Phone: [602-902-1249]<br>
+    </p>
+</body>
+</html>
