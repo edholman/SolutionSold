@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Sold | Guaranteed Cash Offers for Your Home</title>
+    <meta name="description" content="Get a fair cash offer for your home in 24 hours. No fees, no repairs needed. Local trusted home buyers serving your area.">
+    <link rel="canonical" href="https://solutionsold.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+    
+    <style>
+        :root {
+            --trust-blue: #2A5C8A;
+            --trust-blue-light: #3B7CB1;
+            --accent-gold: #D4AF37;
+            --text-dark: #333;
+            --text-medium: #555;
+            --text-light: #777;
+            --bg-light: #f8f8f8;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-svg {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--trust-blue);
+        }
+        
+        .logo-text span {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--trust-blue-light);
+        }
+        
+        .cta-button {
+            background: linear-gradient(to right, var(--trust-blue), var(--trust-blue-light));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(42,92,138,0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--trust-blue);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-medium);
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: var(--trust-blue);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 8px;
+            background-color: var(--bg-light);
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--trust-blue-light);
+        }
+        
+        .benefit-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--trust-blue);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-medium);
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--trust-blue);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--trust-blue), var(--trust-blue-light));
+            color: var(--white);
+        }
+        
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+        }
+        
+        .cta-button.large {
+            padding: 16px 40px;
+            font-size: 18px;
+            background: var(--white);
+            color: var(--trust-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--trust-blue);
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <svg class="logo-svg" viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="trustBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#2A5C8A" />
+                            <stop offset="100%" stop-color="#3B7CB1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M180,30 Q180,10 160,10 L140,20 Q120,30 120,50 L120,70 L180,120 L240,70 L240,50 Q240,30 220,20 L200,10 Q180,10 180,30 Z" fill="url(#trustBlue)" opacity="0.9"/>
+                    <path d="M180,50 L130,100 L150,100 L150,160 L210,160 L210,100 L230,100 Z" fill="#fff"/>
+                    <rect x="165" y="110" width="30" height="50" fill="url(#trustBlue)" rx="2"/>
+                    <path d="M170,135 L175,145 L190,125" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+                </svg>
+                <div class="logo-text">Solution <span>Sold</span></div>
+            </a>
+            
+            <button class="mobile-menu-button">☰</button>
+            
+            <nav class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#about">About Us</a>
+                <a href="#contact" class="cta-button">Get Offer</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Get a Fair Cash Offer for Your Home in 24 Hours</h1>
+            <p>No fees, no repairs needed, no obligations. We buy houses in any condition throughout the area.</p>
+            <a href="https://api.leadconnectorhq.com/widget/booking/RUEiVnjDQ6P4sMqG4NDF" class="cta-button">Schedule Your Free Consultation</a>
+        </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section id="how-it-works" class="benefits">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">1</div>
+                    <h3>Submit Your Info</h3>
+                    <p>Tell us about your property with our simple form or schedule a call.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">2</div>
+                    <h3>Get Your Offer</h3>
+                    <p>We'll analyze your home and present a fair cash offer within 24 hours.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">3</div>
+                    <h3>Close on Your Timeline</h3>
+                    <p>Choose your closing date - we can close in as little as 7 days or wait until you're ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits -->
+    <section id="benefits" class="benefits" style="background-color: #f0f5fa;">
+        <div class="container">
+            <h2 class="section-title">Why Choose Solution Sold</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>No Hidden Fees</h3>
+                    <p>What we offer is what you get - no commissions, no closing costs.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3>Fast Process</h3>
+                    <p>Skip the months of showings and negotiations. Sell in days, not months.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏚️</div>
+                    <h3>Any Condition</h3>
+                    <p>We buy houses as-is. No repairs or cleaning needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Homeowners Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"After my mother passed, we needed to sell her home quickly. Solution Sold gave us a fair offer and handled everything with compassion during a difficult time."</p>
+                    <p class="testimonial-author">- Sarah J., Orlando</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I was facing foreclosure and thought I had no options. These guys gave me a way out that actually left me with cash in my pocket. Lifesavers!"</p>
+                    <p class="testimonial-author">- Michael T., Tampa</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As a real estate agent, I'm skeptical of cash buyers, but Solution Sold is the real deal. They closed on time with no last-minute price changes."</p>
+                    <p class="testimonial-author">- David R., Miami</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready for a Stress-Free Home Sale?</h2>
+            <p>Get your no-obligation cash offer today. It's fast, free, and there's zero pressure to accept.</p>
+            <a href="https://api.leadconnectorhq.com/widget/booking/RUEiVnjDQ6P4sMqG4NDF" class="cta-button large">Schedule Your Free Consultation</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Solution Sold</h3>
+                    <p>Your trusted local home buyers. We make selling your home simple, fast, and fair.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+                        <li><a href="mailto:info@solutionsold.com">info@solutionsold.com</a></li>
+                        <li><a href="https://api.leadconnectorhq.com/widget/booking/RUEiVnjDQ6P4sMqG4NDF">Book Appointment</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Solution Sold. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            const nav = document.querySelector('.nav-links');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
