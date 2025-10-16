@@ -107,6 +107,9 @@
             text-decoration: none;
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
         }
         
         .cta-button:hover {
@@ -300,9 +303,68 @@
             cursor: pointer;
         }
         
+        /* Modal Styles */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            z-index: 10001;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-btn:hover {
+            color: #000;
+        }
+        
+        .form-container {
+            height: 80vh;
+            overflow-y: auto;
+        }
+        
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
             }
             
             .mobile-menu-button {
@@ -346,7 +408,7 @@
                 <a href="#benefits">Benefits</a>
                 <a href="#testimonials">Testimonials</a>
                 <a href="#about">About Us</a>
-                <a href="https://api.leadconnectorhq.com/widget/booking/RUEiVnjDQ6P4sMqG4NDF" class="cta-button">Get Offer</a>
+                <button class="cta-button" id="headerGetOfferBtn">Get Offer</button>
             </nav>
         </div>
     </header>
@@ -356,7 +418,7 @@
         <div class="container">
             <h1>Get a Fair Cash Offer for Your Home in 24 Hours</h1>
             <p>No fees, no repairs needed, no obligations. We buy houses in any condition throughout the area.</p>
-            <a href="https://api.leadconnectorhq.com/widget/booking/RUEiVnjDQ6P4sMqG4NDF" class="cta-button">Get Offer</a>
+            <button class="cta-button large" id="heroGetOfferBtn">Get Offer</button>
         </div>
     </section>
     
@@ -434,7 +496,7 @@
         <div class="container">
             <h2>Ready for a Stress-Free Home Sale?</h2>
             <p>Get your no-obligation cash offer today. It's fast, free, and there's zero pressure to accept.</p>
-            <a href="https://api.leadconnectorhq.com/widget/booking/RUEiVnjDQ6P4sMqG4NDF" class="cta-button large">Close Now</a>
+            <button class="cta-button large" id="ctaGetOfferBtn">Close Now</button>
         </div>
     </section>
     
@@ -460,7 +522,7 @@
                     <ul class="footer-links">
                         <li><a href="tel:+16029021249">(602) 902-1249</a></li>
                         <li><a href="mailto:info@solutionsold.com">info@solutionsold.com</a></li>
-                        <li><a href="https://api.leadconnectorhq.com/widget/booking/RUEiVnjDQ6P4sMqG4NDF">Book Appointment</a></li>
+                        <li><button class="footer-cta" style="background:none;border:none;color:white;padding:0;text-align:left;cursor:pointer;font-family:inherit;font-size:inherit;">Book Appointment</button></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -480,6 +542,35 @@
         </div>
     </footer>
     
+    <!-- Modal for Lead Form -->
+    <div id="formModal" class="modal-backdrop">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModalBtn">×</button>
+            <div class="form-container">
+                <iframe
+                    src="https://api.leadconnectorhq.com/widget/form/kGjNW7Wq3wSe6yrh2flh"
+                    style="width:100%;height:100%;border:none;"
+                    id="inline-kGjNW7Wq3wSe6yrh2flh" 
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Active 4-23"
+                    data-height="1245"
+                    data-layout-iframe-id="inline-kGjNW7Wq3wSe6yrh2flh"
+                    data-form-id="kGjNW7Wq3wSe6yrh2flh"
+                    title="Active 4-23">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- LeadConnector Script -->
+    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    
     <script>
         // Simple mobile menu toggle
         document.querySelector('.mobile-menu-button').addEventListener('click', function() {
@@ -497,6 +588,53 @@
                 });
             });
         });
+        
+        // Modal functionality
+        const formModal = document.getElementById('formModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const getOfferButtons = [
+            document.getElementById('headerGetOfferBtn'),
+            document.getElementById('heroGetOfferBtn'),
+            document.getElementById('ctaGetOfferBtn')
+        ];
+        
+        // Open modal function
+        function openFormModal() {
+            formModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        
+        // Close modal function
+        function closeFormModal() {
+            formModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Event listeners for all Get Offer buttons
+        getOfferButtons.forEach(button => {
+            if (button) {
+                button.addEventListener('click', openFormModal);
+            }
+        });
+        
+        closeModalBtn.addEventListener('click', closeFormModal);
+        
+        // Close modal when clicking outside the form
+        formModal.addEventListener('click', function(e) {
+            if (e.target === formModal) {
+                closeFormModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeFormModal();
+            }
+        });
+        
+        // Footer CTA button
+        document.querySelector('.footer-cta').addEventListener('click', openFormModal);
     </script>
 </body>
 </html>
